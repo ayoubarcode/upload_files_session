@@ -45,9 +45,11 @@ Route::post('create', function() {
     $file->move('public', $file_name);
     $path = 'public'.'/'.$file_name;
     session()->push('files', $path);
-    return view('uploads.create', [ 'message'=>"successfully Uploaded !"]);
-
-
-    
-    
+    return view('uploads.create', [ 'message'=>"successfully Uploaded !"]);    
 });
+
+
+Route::get('controller', 'TestController@testview');
+Route::post('controller', 'TestController@postmethod');
+
+
