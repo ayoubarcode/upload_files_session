@@ -17,9 +17,16 @@ class TestController extends Controller
             "prenom"=>"required"
         ]);
 
+
         $nom = request('nom'); // $nom = $request->nom
         $prenom = request('prenom'); // $prenom = $request->prenom
         return view('testcontroller', ['nom'=>$nom, 'prenom'=>$prenom]);
+    }
+
+
+    public function detail($id) {
+        $id = htmlspecialchars($id);
+        return "<h1> $id </h1>";
     }
 
 

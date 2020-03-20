@@ -48,8 +48,11 @@ Route::post('create', function() {
     return view('uploads.create', [ 'message'=>"successfully Uploaded !"]);    
 });
 
-
 Route::get('controller', 'TestController@testview');
 Route::post('controller', 'TestController@postmethod');
+Route::get('controller/{id}', 'TestController@detail');
+
+
+Route::get('produit', 'ProudctController@all_products');
 
 
